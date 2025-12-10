@@ -69,9 +69,9 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-
-
-
+var positionX = 0;
+var points = 0;
+var speed = 10;
 
 
         /**
@@ -80,7 +80,14 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-
+moveBoxTo(positionX);
+          positionX = positionX + speed;
+          if (positionX > boardWidth) {
+            speed *= -3;
+          }
+          if (positionX < 0) {
+            speed *= -3;
+          }
         
 
           
@@ -95,6 +102,17 @@
          */
         function handleBoxClick() {
 
+Keith Dillon <keith.dillon@inspire35.org>
+2:33 PM (0 minutes ago)
+to me
+
+function handleBoxClick() {
+          positionX = 0;
+          changeBoxText(points);
+          points = points + 1;
+          changeBoxText(points);
+          speed = 3 * points + 10;
+        
 
 
 
